@@ -11,7 +11,7 @@ const CoursePreview = ({ params }: { params: { courseId: string } }) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <CourseEnrollSection />
+        <CourseEnrollSection courseId={params.courseId} />
         <CourseContentSection courseId={params.courseId} />
       </div>
     </div>
