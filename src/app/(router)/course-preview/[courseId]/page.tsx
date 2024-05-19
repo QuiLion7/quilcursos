@@ -6,7 +6,7 @@ import CourseContentSection from "../components/CourseContentSection";
 const CoursePreview = ({ params }: { params: { courseId: string } }) => {
   return (
     <div className="grid grid-cols-1 gap-3 p-4 md:grid-cols-3">
-      <div className="col-span-2 rounded-xl bg-primary-foreground p-4">
+      <div className="col-span-2 rounded-xl bg-background p-4">
         <CourseVideoDescription courseId={params.courseId} />
       </div>
 

@@ -14,12 +14,12 @@ const CourseContentSection: React.FC<CourseContentSectionProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex w-full flex-col justify-center gap-3 rounded-xl bg-primary-foreground p-3">
+    <div className="flex w-full flex-col justify-center gap-3 rounded-xl bg-background p-3">
       <h2>Conteúdo</h2>
       {course?.chapter.map((item, index) => (
         <div
           key={index}
-          className="rounded-xl hover:bg-secondary hover:text-primary"
+          className="rounded-xl hover:bg-primary/70 hover:text-secondary-foreground"
         >
           <h2
             className={`flex cursor-pointer items-center justify-between rounded-xl border px-3 py-2 text-base ${activeIndex == index && "bg-primary text-primary-foreground"}`}

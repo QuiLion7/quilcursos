@@ -27,7 +27,7 @@ const CourseEnrollSection: React.FC<CourseEnrollSectionProps> = ({
           <h2 className="font-light text-primary-foreground">
             Inscreva-se agora para começar a aprender e construir o projeto
           </h2>
-          <Button className="bg-secondary-foreground uppercase hover:bg-pink-600 hover:text-primary-foreground">
+          <Button className="bg-background uppercase text-secondary-foreground hover:bg-pink-600 hover:text-primary-foreground">
             Inscreva-se agora
           </Button>
         </div>
@@ -37,7 +37,7 @@ const CourseEnrollSection: React.FC<CourseEnrollSectionProps> = ({
             Inscreva-se agora para começar a aprender e construir o projeto
           </h2>
           <Link href={"/sign-in"}>
-            <Button className="bg-secondary-foreground uppercase hover:bg-pink-600 hover:text-primary-foreground">
+            <Button className="bg-background uppercase text-secondary-foreground hover:bg-pink-600 hover:text-primary-foreground">
               Inscreva-se agora
             </Button>
           </Link>
@@ -47,7 +47,7 @@ const CourseEnrollSection: React.FC<CourseEnrollSectionProps> = ({
           <h2 className="font-light text-primary-foreground">
             Compre uma assinatura mensal e tenha acesso a todos os cursos
           </h2>
-          <Button className="bg-secondary-foreground uppercase hover:bg-pink-600 hover:text-primary-foreground">
+          <Button className="bg-background uppercase text-secondary-foreground hover:bg-pink-600 hover:text-primary-foreground">
             Assine por apenas R$ 20,00
           </Button>
         </div>

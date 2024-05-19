@@ -9,7 +9,7 @@ export default function Courses() {
         <WelcomeBanner />
         <CourseList />
       </div>
-      <div className="flex items-start justify-center rounded-xl bg-primary-foreground p-4">
+      <div className="flex items-start justify-center rounded-xl bg-background p-4">
         <SideBanners />
       </div>
     </div>
