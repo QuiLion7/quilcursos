@@ -10,7 +10,7 @@ const Header = () => {
   const { user, isLoaded } = useUser();
 
   return (
-    <div className="grid grid-cols-2 bg-primary-foreground p-4 md:grid-cols-4">
+    <div className="grid grid-cols-2 bg-background p-4 md:grid-cols-4">
       <Input
         type="text"
         placeholder="Procurar..."
@@ -24,12 +24,13 @@ const Header = () => {
         {isLoaded && user ? (
           <UserButton afterSignOutUrl="/courses" />
         ) : (
-          <Link href={"sign-in"}>
-            <Button className="w-full uppercase">Começar</Button>
+          <Link href={"/sign-in"}>
+            <Button className="w-full uppercase text-primary-foreground">
+              Começar
+            </Button>
           </Link>
         )}
       </div>
-      <div className="flex "></div>
     </div>
   );
 };
