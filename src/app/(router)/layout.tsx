@@ -13,11 +13,11 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <div className="fixed sm:block sm:w-64">
+    <div className="bg-secondary">
+      <div className="hidden sm:fixed sm:block sm:w-60">
         <SideNav />
       </div>
-      <div className="ml-64">
+      <div className="ml-0 sm:ml-60">
         <Header />
         {children}
       </div>
