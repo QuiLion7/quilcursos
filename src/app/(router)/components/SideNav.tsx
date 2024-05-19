@@ -1,13 +1,60 @@
-import { BadgeIcon, BookOpen, GraduationCap } from "lucide-react";
+"use client";
+
+import { useUser } from "@clerk/nextjs";
+import {
+  BadgeCheck,
+  BookOpen,
+  GraduationCap,
+  LayoutDashboard,
+  LayoutGrid,
+  Mails,
+} from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
 const SideNav = () => {
+  const { user } = useUser();
   const menu = [
-    { id: 1, name: "Todos os Cursos", icon: BookOpen },
-    { id: 2, name: "Filiação", icon: BadgeIcon },
-    { id: 3, name: "Seja Professor", icon: GraduationCap },
+    {
+      id: 1,
+      name: "Meu Painel",
+      icon: LayoutDashboard,
+      path: "/dashboard",
+      auth: user,
+    },
+    {
+      id: 2,
+      name: "Todos os Cursos",
+      icon: BookOpen,
+      path: "/courses",
+      auth: true,
+    },
+    { id: 3, name: "Loja", icon: LayoutGrid, path: "/store", auth: true },
+    {
+      id: 4,
+      name: "Filiação",
+      icon: BadgeCheck,
+      path: "/membership",
+      auth: true,
+    },
+    {
+      id: 5,
+      name: "Seja Professor",
+      icon: GraduationCap,
+      path: "/teacher",
+      auth: true,
+    },
+    { id: 6, name: "Novidades", icon: Mails, path: "/newsletter", auth: true },
   ];
+
+  const path = usePathname();
+
+  useEffect(() => {
+    console.log(path);
+  }, []);
+
   return (
     <div className="flex h-screen flex-col border bg-primary-foreground p-2 shadow-sm">
       <div className="my-4 flex w-full items-center justify-start">
@@ -17,18 +64,24 @@ const SideNav = () => {
           height={50}
           alt="logo"
           quality={100}
+          priority
+          style={{ width: "auto", height: "auto" }}
         />
       </div>
-      <div className="flex flex-col gap-1">
-        {menu.map((item) => (
-          <div
-            key={item.id}
-            className="group flex cursor-pointer items-center gap-3 rounded-md p-2 text-xl text-primary transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground"
-          >
-            <item.icon className="group-hover:animate-bounce" />
-            <h2>{item.name}</h2>
-          </div>
-        ))}
+      <div className="flex flex-col gap-2">
+        {menu.map(
+          (item) =>
+            item.auth && (
+              <Link key={item.id} href={item.path}>
+                <div
+                  className={`group flex cursor-pointer items-center gap-3 rounded-md p-2 text-xl text-primary transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground ${path.includes(item.path) && `bg-primary text-primary-foreground`}`}
+                >
+                  <item.icon className="group-hover:animate-bounce" />
+                  <h2>{item.name}</h2>
+                </div>
+              </Link>
+            ),
+        )}
       </div>
     </div>
   );
