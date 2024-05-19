@@ -56,8 +56,11 @@ const SideNav = () => {
   }, []);
 
   return (
-    <div className="flex h-screen flex-col border bg-primary-foreground p-2 shadow-sm">
-      <div className="my-4 flex w-full items-center justify-start">
+    <div className="flex h-screen flex-col border bg-background p-4 shadow-sm">
+      <Link
+        href={"/"}
+        className="mb-4 mt-1 flex w-full items-center justify-center"
+      >
         <Image
           src="/logoquil.png"
           width={80}
@@ -67,17 +70,18 @@ const SideNav = () => {
           priority
           style={{ width: "auto", height: "auto" }}
         />
-      </div>
+      </Link>
+
       <div className="flex flex-col gap-2">
         {menu.map(
           (item) =>
             item.auth && (
               <Link key={item.id} href={item.path}>
                 <div
-                  className={`group flex cursor-pointer items-center gap-3 rounded-md p-2 text-xl text-primary transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground ${path.includes(item.path) && `bg-primary text-primary-foreground`}`}
+                  className={`group flex cursor-pointer items-center gap-3 rounded-md p-2 text-xl transition-all duration-200 ease-in-out hover:bg-primary/80 hover:text-primary-foreground ${path.includes(item.path) && `bg-primary text-primary-foreground`}`}
                 >
                   <item.icon className="group-hover:animate-bounce" />
-                  <h2>{item.name}</h2>
+                  <h2 className="">{item.name}</h2>
                 </div>
               </Link>
             ),
