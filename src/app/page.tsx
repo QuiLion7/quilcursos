@@ -1,5 +1,6 @@
 "use client";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 import {
   SignInButton,
   SignedIn,
@@ -7,6 +8,7 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -24,16 +26,23 @@ export default function Home() {
   }, [user]);
 
   return (
-    <main className="relative flex min-h-screen w-full flex-col items-center justify-center">
-      {/* <div className="absolute">
+    <main className="relative flex min-h-screen w-full flex-col items-center justify-center gap-4">
+      <div className="absolute left-1 top-0 p-4">
         <ModeToggle />
-      </div> */}
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+      </div>
+      <div>
+        <SignedOut>
+          <Button>
+            <SignInButton />
+          </Button>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </div>
+      <Link href={"/courses"}>
+        <Button>Courses</Button>
+      </Link>
     </main>
   );
 }
