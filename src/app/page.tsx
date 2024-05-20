@@ -17,13 +17,13 @@ export default function Home() {
 
   const { user, isLoaded } = useUser();
 
-  useEffect(() => {
-    if (user) {
-      router.push("dashboard");
-    } else {
-      isLoaded && router.push("courses");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     router.push("dashboard");
+  //   } else {
+  //     isLoaded && router.push("courses");
+  //   }
+  // }, [user]);
 
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center gap-4">
