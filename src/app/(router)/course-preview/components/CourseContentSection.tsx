@@ -22,7 +22,7 @@ const CourseContentSection: React.FC<CourseContentSectionProps> = ({
           className="rounded-xl hover:bg-primary/70 hover:text-secondary-foreground"
         >
           <h2
-            className={`flex cursor-pointer items-center justify-between rounded-xl border px-3 py-2 text-base ${activeIndex == index && "bg-primary text-primary-foreground"}`}
+            className={`flex cursor-pointer items-center justify-between rounded-xl border px-3 py-2 text-base  ${activeIndex == index && "bg-primary font-semibold text-primary-foreground"}`}
           >
             {index + 1}. {item.name}
             {activeIndex == index ? (
