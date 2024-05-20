@@ -78,9 +78,9 @@ const SideNav = () => {
             item.auth && (
               <Link key={item.id} href={item.path}>
                 <div
-                  className={`group flex cursor-pointer items-center gap-3 rounded-md p-2 text-xl transition-all duration-200 ease-in-out hover:bg-primary/80 hover:text-primary-foreground ${path.includes(item.path) && `bg-primary text-primary-foreground`}`}
+                  className={`group flex cursor-pointer items-center gap-3 rounded-md p-2 text-lg transition-all duration-200 ease-in-out hover:bg-primary/80 hover:text-primary-foreground ${path.includes(item.path) && `bg-primary text-primary-foreground`}`}
                 >
-                  <item.icon className="group-hover:animate-bounce" />
+                  <item.icon className=" w-6 group-hover:animate-bounce" />
                   <h2 className="">{item.name}</h2>
                 </div>
               </Link>
