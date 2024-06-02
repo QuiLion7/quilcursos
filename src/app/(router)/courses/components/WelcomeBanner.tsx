@@ -10,12 +10,13 @@ const WelcomeBanner = () => {
         height={100}
         alt="boy"
         style={{ width: "auto", height: "auto" }}
+        className="hidden sm:block"
       />
       <div className="w-full text-center">
-        <h2 className="text-3xl font-bold uppercase text-secondary-foreground">
+        <h2 className="text-base font-bold uppercase text-secondary-foreground md:text-3xl">
           Bem Vindo ao <span className="text-primary">QuiLCursos</span>
         </h2>
-        <h2 className="text-xl uppercase text-secondary-foreground">
+        <h2 className="text-base uppercase text-secondary-foreground md:text-xl">
           Aqui você investe em quem mais importa
         </h2>
       </div>
