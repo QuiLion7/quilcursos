@@ -14,10 +14,10 @@ export default function Layout({
 }>) {
   return (
     <div className="bg-secondary">
-      <div className="hidden sm:fixed sm:block sm:w-60">
+      <div className="fixed w-[70px] sm:w-60">
         <SideNav />
       </div>
-      <div className="ml-0 sm:ml-60">
+      <div className="ml-[70px] sm:ml-60">
         <Header />
         {children}
       </div>
