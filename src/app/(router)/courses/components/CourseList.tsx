@@ -13,7 +13,7 @@ const CourseList = () => {
   return (
     <div className="rounded-md bg-background p-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-secondary-foreground">
+        <h2 className="text-base font-bold text-secondary-foreground sm:text-2xl">
           Todos os Cursos
         </h2>
         <Select>
