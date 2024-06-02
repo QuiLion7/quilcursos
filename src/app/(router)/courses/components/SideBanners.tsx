@@ -4,7 +4,7 @@ import React from "react";
 
 function SideBanners() {
   return (
-    <div>
+    <div className="w-full">
       {SideBannerList.map((item, index) => (
         <div key={index} className="h-auto w-full">
           <Image
