@@ -18,7 +18,7 @@ const Header = () => {
       />
 
       <div className="col-span-1 flex w-full items-center justify-end">
-        <div className="flex h-full w-full items-center justify-end pr-2">
+        <div className=" hidden h-full w-full items-center justify-end pr-2 sm:flex">
           <BellDot />
         </div>
         {isLoaded && user ? (
